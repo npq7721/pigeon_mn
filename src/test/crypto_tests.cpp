@@ -6,7 +6,6 @@
 #include "crypto/ripemd160.h"
 #include "crypto/sha1.h"
 #include "crypto/sha256.h"
-#include "crypto/sha512.h"
 #include "crypto/hmac_sha256.h"
 #include "crypto/hmac_sha512.h"
 #include "utilstrencodings.h"
