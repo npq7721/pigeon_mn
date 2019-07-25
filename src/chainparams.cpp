@@ -289,7 +289,7 @@ public:
 	    nDefaultPort = 8757;
 	    nPruneAfterHeight = 100000;
 	    newFutureWindowBlock = 200000;
-        vAlertPubKey = ParseHex("048240a8748a80a286b270ba126705ced4f2ce5a7847b3610ea3c06513150dade2a8512ed5ea86320824683fc0818f0ac019214973e677acd1244f6d0571fc5103");
+        vAlertPubKey = ParseHex("035f4fbe1cd72c787753afb59a6dc0273ca7db0c76d2170d4d245fa7e991127c9f");
 
         genesis = CreateGenesisBlock(1521661111, 17434278, 0x1e00ffff, 4, 5000 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
@@ -333,7 +333,7 @@ public:
         nPoolMaxParticipants = 5;
         nFulfilledRequestExpireTime = 60*60; // fulfilled requests expire in 1 hour
 
-        vSporkAddresses = {"Xgtyuk76vhuFW2iT7UAiHgNdWXCf3J34wh"};
+        vSporkAddresses = {"PMwnQ4AjUdahj4hiu9AQRah9wKTPWjZKbV"};
         nMinSporkKeys = 1;
         fBIP9CheckMasternodesUpgraded = true;
 
