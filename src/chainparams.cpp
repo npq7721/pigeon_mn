@@ -451,8 +451,8 @@ public:
 
         genesis = CreateGenesisBlock(1521662222, 32516807, 0x1e00ffff, 4, 5000 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        std::cout << "gensis hash=" << consensus.hashGenesisBlock.GetHex(); << "\n";
-        std::cout << "merkleroot=" << genesis.hashMerkleRoot.GetHex(); << "\n";
+        std::cout << "gensis hash=" << consensus.hashGenesisBlock.GetHex() << "\n";
+        std::cout << "merkleroot=" << genesis.hashMerkleRoot.GetHex() << "\n";
         assert(consensus.hashGenesisBlock == uint256S("0x000000c256f01af5da46131c1da1ca67907bac5c6bf2ea231126a1a79c787294"));
         assert(genesis.hashMerkleRoot == uint256S("0xf0cc5f92b11a6655a4939fc239e8bf960cd0453b87b5a0820ab36904279341a5"));
 
