@@ -157,9 +157,10 @@ void CMasternodeSync::ProcessTick(CConnman& connman)
     uiInterface.NotifyAdditionalDataSyncProgressChanged(nSyncProgress);
 
     std::vector<CNode*> vNodesCopy = connman.CopyNodeVector(CConnman::FullyConnectedOnly);
-
+    LogPrintf("nodes size = %d ", vNodesCopy.size());
     for (auto& pnode : vNodesCopy)
     {
+        LogPrintf("CMasternodeSync::ProcessTick -- fDisconnect %d\n", pnode->fDisconnect);
         CNetMsgMaker msgMaker(pnode->GetSendVersion());
 
         // Don't try to sync any data from outbound "masternode" connections -
