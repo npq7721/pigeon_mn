@@ -1776,7 +1776,9 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
     {
         bool fAnnounceUsingCMPCTBLOCK = false;
         uint64_t nCMPCTBLOCKVersion = 1;
+        LogPrint("net", "vRecv=%d fAnnounceUsingCMPCTBLOCK=%d nCMPCTBLOCKVersion=%d\n", vRecv, fAnnounceUsingCMPCTBLOCK, nCMPCTBLOCKVersion);
         vRecv >> fAnnounceUsingCMPCTBLOCK >> nCMPCTBLOCKVersion;
+        LogPrint("net", "nCMPCTBLOCKVersion=%d\n", nCMPCTBLOCKVersion);
         if (nCMPCTBLOCKVersion == 1) {
             LOCK(cs_main);
             State(pfrom->GetId())->fProvidesHeaderAndIDs = true;
