@@ -2678,7 +2678,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
                 return error("non-continuous headers sequence");
             }
             hashLastBlock = header.GetHash();
-            LogPrint("net", "header prevHash=%s, hash=%s", header.hashPrevBlock.GetHex(), hashLastBlock.GetHex());
+           // LogPrint("net", "header prevHash=%s, hash=%s", header.hashPrevBlock.GetHex(), hashLastBlock.GetHex());
         }
         }
 
@@ -2714,6 +2714,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
         }
 
         bool fCanDirectFetch = CanDirectFetch(chainparams.GetConsensus());
+        LogPrint("net", "fCanDirectFetch=%d, pindexLast->IsValid=%d Tip()->nChainWork <= pindexLast->nChainWork=%d\n", fCanDirectFetch, pindexLast->IsValid(BLOCK_VALID_TREE),(chainActive.Tip()->nChainWork <= pindexLast->nChainWork));
         // If this set of headers is valid and ends in a block with at least as
         // much work as our tip, download as much as possible.
         if (fCanDirectFetch && pindexLast->IsValid(BLOCK_VALID_TREE) && chainActive.Tip()->nChainWork <= pindexLast->nChainWork) {
