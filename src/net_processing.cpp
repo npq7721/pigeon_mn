@@ -2678,6 +2678,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
                 return error("non-continuous headers sequence");
             }
             hashLastBlock = header.GetHash();
+            LogPrint("net", "header prevHash=%s, hash=%s", header.hashPrevBlock.GetHex(), hashLastBlock.GetHex());
         }
         }
 
