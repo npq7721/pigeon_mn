@@ -1776,10 +1776,10 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
     {
         bool fAnnounceUsingCMPCTBLOCK = false;
         uint64_t nCMPCTBLOCKVersion = 1;
-        LogPrint("net", "fAnnounceUsingCMPCTBLOCK=%d nCMPCTBLOCKVersion=%d\n", fAnnounceUsingCMPCTBLOCK, nCMPCTBLOCKVersion);
+        //LogPrint("net", "fAnnounceUsingCMPCTBLOCK=%d nCMPCTBLOCKVersion=%d\n", fAnnounceUsingCMPCTBLOCK, nCMPCTBLOCKVersion);
         vRecv >> fAnnounceUsingCMPCTBLOCK >> nCMPCTBLOCKVersion;
-        LogPrint("net", "nCMPCTBLOCKVersion=%d\n", nCMPCTBLOCKVersion);
-        if (nCMPCTBLOCKVersion == 1) {
+        //LogPrint("net", "nCMPCTBLOCKVersion=%d\n", nCMPCTBLOCKVersion);
+        if (nCMPCTBLOCKVersion == 1 || nCMPCTBLOCKVersion == 2) {
             LOCK(cs_main);
             State(pfrom->GetId())->fProvidesHeaderAndIDs = true;
             State(pfrom->GetId())->fPreferHeaderAndIDs = fAnnounceUsingCMPCTBLOCK;
