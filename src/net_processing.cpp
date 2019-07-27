@@ -1776,7 +1776,7 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
     {
         bool fAnnounceUsingCMPCTBLOCK = false;
         uint64_t nCMPCTBLOCKVersion = 1;
-        LogPrint("net", "vRecv=%d fAnnounceUsingCMPCTBLOCK=%d nCMPCTBLOCKVersion=%d\n", vRecv, fAnnounceUsingCMPCTBLOCK, nCMPCTBLOCKVersion);
+        LogPrint("net", "fAnnounceUsingCMPCTBLOCK=%d nCMPCTBLOCKVersion=%d\n", fAnnounceUsingCMPCTBLOCK, nCMPCTBLOCKVersion);
         vRecv >> fAnnounceUsingCMPCTBLOCK >> nCMPCTBLOCKVersion;
         LogPrint("net", "nCMPCTBLOCKVersion=%d\n", nCMPCTBLOCKVersion);
         if (nCMPCTBLOCKVersion == 1) {
